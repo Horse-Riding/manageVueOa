@@ -8,14 +8,14 @@
         <div class="container">
             <div class="plugins-tips">
                 Vue.Draggable：基于 Sortable.js 的 Vue 拖拽组件。
-                访问地址：<a href="https://github.com/SortableJS/Vue.Draggable" target="_blank">Vue.Draggable</a>
+                访问地址：<a href="#" target="_blank">Vue.Draggable</a>
             </div>
             <div class="drag-box">
                 <div class="drag-box-item">
                     <div class="item-title">todo</div>
                     <draggable v-model="todo" @remove="removeHandle" :options="dragOptions">
                         <transition-group tag="div" id="todo" class="item-ul">
-                            <div v-for="(item,index) in todo" class="drag-list" :key="index">
+                            <div v-for="(item, index) in todo" class="drag-list" :key="item.id">
                                 {{item.content}}
                             </div>
                         </transition-group>
@@ -25,7 +25,7 @@
                     <div class="item-title">doing</div>
                     <draggable v-model="doing" @remove="removeHandle" :options="dragOptions">
                         <transition-group tag="div" id="doing" class="item-ul">
-                            <div v-for="(item,index) in doing" class="drag-list" :key="index">
+                            <div v-for="(item, index1) in doing" class="drag-list" :key="item.id">
                                 {{item.content}}
                             </div>
                         </transition-group>
@@ -35,7 +35,7 @@
                     <div class="item-title">done</div>
                     <draggable v-model="done" @remove="removeHandle" :options="dragOptions">
                         <transition-group tag="div" id="done" class="item-ul">
-                            <div v-for="(item,index) in done" class="drag-list" :key="index">
+                            <div v-for="(item, index1) in done" class="drag-list" :key="item.id">
                                 {{item.content}}
                             </div>
                         </transition-group>
